@@ -19,7 +19,7 @@ import {
     FaSms,
 } from "react-icons/fa";
 
-
+import CartIcon from "./CartWidget";
 
 
 
@@ -79,7 +79,14 @@ const NavBar = () => {
                                 </div>
                             </MenuItemLink>
                         </MenuItem>
-
+                        
+                        <MenuItem>
+                            <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                                <div className="Cart">
+                                <CartIcon/>
+                                </div>
+                            </MenuItemLink>
+                        </MenuItem>
                     </Menu>
             </Wrapper>
         </Container>
