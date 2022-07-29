@@ -1,29 +1,57 @@
-import React from 'react'
-import { useState } from 'react';
-import './ItemCount.css'
+import React, { useEffect, useState } from 'react';
+import "./ItemCount.css";
 
-function ItemCount({stock}) {
 
-    const [count, setCount] = useState(0);
 
-    function Adding () {
-        if(count < stock) {
+
+const ItemCount = ({stock, initial, onAdd }) => {
+
+    const [count, setCount] = useState(Number(initial));
+    const [plusCount, setPlusCount] = useState(false);
+    const [minusCount, setMinusCount] = useState(false);
+
+
+
+    useEffect(() => {
+
+        if (count < Number(stock)) {
+            setPlusCount(true);
+        } else {
+            setPlusCount(false);
+        }
+        if (count > 1) {
+            setMinusCount(true);
+        } else {
+            setMinusCount(false);
+        }
+
+    }, [count, stock]);
+
+    const add = () => {
+        if (plusCount) {
             setCount(count + 1);
         }
     }
 
-    function Subs () {
-        if (count > 0) {
+    const subs = () => {
+        if (count > 1) {
             setCount(count - 1);
         }
     }
 
-
     return (
-        <div>
-            <button onClick={Subs} className="button Subs">-</button>
-            <span>{count}</span>
-            <button onClick={Adding} className="button Add">+</button>
+        <div className="count-component-container" >
+            <div className="count-container">
+                <div className="stock-count">{`Stock ${stock} unidades`}</div>
+                <div className="subs-add-stock">
+                    <div className={`subs-add-stock-btn  ${minusCount ? "left" : "disable-btn-left"}`} onClick={subs}>-</div>
+                    <div className="subs-add-stock-number">{count}</div>
+                    <div className={`subs-add-stock-btn  ${plusCount ? "right" : "disable-btn-right"}`} onClick={add}>+</div>
+                </div>
+            </div>
+            <div className="button" onClick={() => {
+                onAdd(count);
+            }}>Agregar a carrito</div>
         </div>
     )
 }

@@ -1,52 +1,125 @@
-.Buttons{
-    width: 100%;
+.count-component-container{
     display: flex;
-    justify-content: space-around;
     align-items: center;
-}
-
-.button {
-    width: 1rem;
-    border-radius: 15px;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    margin: 10px 10px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-}
-
-.Add {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #F00758;
-    margin: 10px 20px;
-    text-align: center;
     justify-content: center;
+    flex-direction: column;
 
 }
-
-.Add:hover {
-    background-color:#F00758;
-    color: white;
-}
-
-.Subs {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #F00758;
-    margin: 10px 20px;
+.stock-count{
+    margin: 0.5rem;
+    font-size: 1.5rem;
     text-align: center;
+    color: orangered;
+}
+.count-container{
+    margin: 1rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-family: Roboto,sans-serif;
+    color: orangered;
+    background-color: var(--maincolor);
+    padding: 1rem;
+    width: 20rem;
+}
+.subs-add-stock{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    border: 0.01rem solid white;
+    border-radius: 5px;
+    margin: 0.5rem;
+    background-color: white;
+    color:var(--maincolor);
+    font-size: 2rem;
+    height: 2.1rem;
+
+}
+.subs-add-stock-btn{
+    display: flex;
+    align-items:center;
+    border: 0.01rem solid white;
+    margin: 0.5rem;
+    background-color: white;
+    color:var(--maincolor);
+    font-size: 1.5rem;
 
 }
 
-.Subs:hover {
-    background-color: #F00758;
-    color: white;
+.right{
+    right:0;
+
+}
+.right:hover{
+    color:green; 
+    cursor: pointer;  
+}
+.left{
+    left: 0;
+}
+.left:hover{
+    color: var(--secondaryColor);
+    cursor: pointer;  
 }
 
-span{
-    color:#F00758 ;
+.subs-add-stock-number{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.01rem solid white;
+    margin: 0.5rem;
+    background-color: white;
+    color:var(--maincolor);
+    font-size: 1.5rem;
+    user-select: none;
+
+}
+.disable-sign-left{
+    left: 0;
+    color: #cccccc;
+    cursor: default;
+}
+.disable-sign-right{
+    right:  0;
+    color: #cccccc;
+    cursor: default;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    height: 3rem;
+    color:#f00759c0 ;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Bebas Neue', cursive;
+    border: 0.01rem solid var(--maincolor);
+    border-radius: 5px;
+    background-color: #eee;
+    box-shadow: 2px 2px 2px #ec4881;
+    user-select: none;
+}
+.button:hover{
+    background-color:#faaf89;
+    color:#ec4881;
+    cursor: pointer;    
+}
+
+.btn-terminar-compra{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Bebas Neue', cursive;
+    color: #F00758;
+    border: 0.01rem solid var(--maincolor);
+    border-radius: 5px;
+    background-color: #eee;
+    box-shadow: 2px 2px 2px #ec4881;
+    user-select: none;
 }
