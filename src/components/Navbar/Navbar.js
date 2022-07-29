@@ -19,7 +19,7 @@ import {
     FaSms,
 } from "react-icons/fa";
 
-import CartIcon from "./CartWidget";
+import CartIcon from "../CartWidget/CartWidget";
 
 
 

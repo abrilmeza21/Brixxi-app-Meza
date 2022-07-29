@@ -1,0 +1,52 @@
+.Buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button {
+    width: 1rem;
+    border-radius: 15px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 10px 10px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.Add {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #F00758;
+    margin: 10px 20px;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.Add:hover {
+    background-color:#F00758;
+    color: white;
+}
+
+.Subs {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #F00758;
+    margin: 10px 20px;
+    text-align: center;
+
+}
+
+.Subs:hover {
+    background-color: #F00758;
+    color: white;
+}
+
+span{
+    color:#F00758 ;
+}

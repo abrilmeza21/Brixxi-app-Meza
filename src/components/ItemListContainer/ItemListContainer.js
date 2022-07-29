@@ -1,15 +1,19 @@
 import React from "react";
+import styled from "styled-components";
+import ItemCount from "../ItemCount/ItemCount";
 
-const Titulo = (props) => {
+export const CardContainer = styled.section`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+`;
+
+
+function ItemListContainer () {
     return(
-        <h3  style={{display:"flex", justifyContent:"center", padding:"5px", fontSize:"2.8rem"}}>{props.Titulo}</h3>
-    )
-}
-
-
-const ItemListContainer = () => {
-    return(
-                    <Titulo Titulo = "Hola"/>
+        <CardContainer>
+        <ItemCount stock="8" initial="1"/>
+        </CardContainer>
     );
 }
 
@@ -17,6 +21,5 @@ const ItemListContainer = () => {
 
 
 export default ItemListContainer
-
 
 
