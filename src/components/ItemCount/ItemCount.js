@@ -4,7 +4,7 @@ import "./ItemCount.css";
 
 
 
-const ItemCount = ({stock, initial, onAdd }) => {
+const ItemCount = ({Stock, initial, onAdd }) => {
 
     const [count, setCount] = useState(Number(initial));
     const [plusCount, setPlusCount] = useState(false);
@@ -14,7 +14,7 @@ const ItemCount = ({stock, initial, onAdd }) => {
 
     useEffect(() => {
 
-        if (count < Number(stock)) {
+        if (count < Number(Stock)) {
             setPlusCount(true);
         } else {
             setPlusCount(false);
@@ -25,7 +25,7 @@ const ItemCount = ({stock, initial, onAdd }) => {
             setMinusCount(false);
         }
 
-    }, [count, stock]);
+    }, [count, Stock]);
 
     const add = () => {
         if (plusCount) {
@@ -42,7 +42,7 @@ const ItemCount = ({stock, initial, onAdd }) => {
     return (
         <div className="count-component-container" >
             <div className="count-container">
-                <div className="stock-count">{`Stock ${stock} unidades`}</div>
+                <div className="stock-count">{`Stock ${Stock} unidades`}</div>
                 <div className="subs-add-stock">
                     <div className={`subs-add-stock-btn  ${minusCount ? "left" : "disable-btn-left"}`} onClick={subs}>-</div>
                     <div className="subs-add-stock-number">{count}</div>

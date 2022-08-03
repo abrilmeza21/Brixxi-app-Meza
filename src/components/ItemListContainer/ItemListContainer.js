@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import ItemCount from "../ItemCount/ItemCount";
+import ItemList from "./ItemList";
+import CustomFetch from "../Utils/CustomFetch";
+import Products from "../Utils/Products";
 
 export const CardContainer = styled.section`
     display: flex;
@@ -10,9 +12,16 @@ export const CardContainer = styled.section`
 
 
 function ItemListContainer () {
+    const [Item, setItem] = useState([])
+    useEffect(() => {
+        CustomFetch (2000, Products)
+        .then (resultado => setItem(resultado))
+        }, [])
     return(
         <CardContainer>
-        <ItemCount stock="8" initial="1"/>
+            {
+                Item?.length <= 0 ? <h1 style={{color:"orangered", fontSize:"2rem"}}>CARGANDO...</h1> : <ItemList Products={Item}/>
+            }
         </CardContainer>
     );
 }
@@ -21,5 +30,9 @@ function ItemListContainer () {
 
 
 export default ItemListContainer
+
+
+
+
 
 
