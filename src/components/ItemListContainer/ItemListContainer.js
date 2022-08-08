@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import ItemList from "./ItemList";
+import ItemList from "../ItemList/ItemList";
 import CustomFetch from "../Utils/CustomFetch";
 import Products from "../Utils/Products";
 
@@ -16,6 +16,7 @@ function ItemListContainer () {
     useEffect(() => {
         CustomFetch (2000, Products)
         .then (resultado => setItem(resultado))
+        .catch (()=> console.log ("error con producto"))
         }, [])
     return(
         <CardContainer>

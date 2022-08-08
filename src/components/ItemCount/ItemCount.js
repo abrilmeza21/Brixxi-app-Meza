@@ -49,9 +49,7 @@ const ItemCount = ({Stock, initial, onAdd }) => {
                     <div className={`subs-add-stock-btn  ${plusCount ? "right" : "disable-btn-right"}`} onClick={add}>+</div>
                 </div>
             </div>
-            <div className="button" onClick={() => {
-                onAdd(count);
-            }}>Agregar a carrito</div>
+            <div className="button">Agregar a carrito</div>
         </div>
     )
 }

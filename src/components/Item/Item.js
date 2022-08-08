@@ -5,8 +5,9 @@ import ItemCount from "../ItemCount/ItemCount";
 
 export const ItemName = styled.h1`
     display: flex;
-    size: 2rem;
+    font-size: 3rem;
     width: 100%;
+    height: 4rem;
     margin: 3px;
     color: pink;
     text-shadow: 2px 2px 2px #F00758 ;
@@ -18,7 +19,7 @@ export const ItemPrice = styled.div`
     width: 100%;
     justify-content: center;
     color: #F00758 ;
-    font-size:1.2rem;
+    font-size:2rem;
 `;
 
 

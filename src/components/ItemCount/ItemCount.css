@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
+    height: 9rem;
 }
 .stock-count{
     margin: 0.5rem;

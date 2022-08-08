@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Item from "../Item/Item";
 
-const ItemListCont = styled.div`
+export const ItemListCont = styled.div`
     width: 100;
     background-color: #FF9158;
     height: 30rem;
