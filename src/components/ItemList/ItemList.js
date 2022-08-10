@@ -1,29 +1,17 @@
-import React from "react";
-import styled from "styled-components";
-import Item from "../Item/Item";
-
-export const ItemListCont = styled.div`
-    width: 100;
-    background-color: #FF9158;
-    height: 30rem;
-    margin:45px 15px;
-    border-radius:10px;
-    justify-content: center;
-`;
+import React from 'react';
+import "./ItemList.css"
 
 
+export const ItemList = ({ titulo, children,}) => {
 
-function ItemList({Products}){
-    return(
-        Products.map( p =>
-            <ItemListCont>
-                <Item
-                key={p.Id}
-                {...p}
-            />
-            </ItemListCont>
-        )
-    )
+    return (
+        <section className="card-list">
+            <h2 className= "card-list-name">
+                {titulo}
+            </h2>
+            <article className="card-list-article">
+                {children}
+            </article>
+        </section>
+    );
 }
-
-export default ItemList

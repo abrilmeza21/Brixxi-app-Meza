@@ -1,37 +1,36 @@
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-import ItemList from "../ItemList/ItemList";
-import CustomFetch from "../Utils/CustomFetch";
-import Products from "../Utils/Products";
+import React, { useState, useEffect } from 'react';
+import './ItemListContainer.css';
+import { ItemList } from "../ItemList/ItemList"
+import { Item } from "../Item/Item";
+import { promiseProductCategory } from "../Utils/Products";
+import { useParams } from 'react-router-dom';
 
-export const CardContainer = styled.section`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-`;
+export const ItemListContainer = () => {
 
 
-function ItemListContainer () {
-    const [Item, setItem] = useState([])
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const { id } = useParams();
+    const [title, setTitle] = useState("Brixxi");
+
     useEffect(() => {
-        CustomFetch (2000, Products)
-        .then (resultado => setItem(resultado))
-        .catch (()=> console.log ("error con producto"))
-        }, [])
-    return(
-        <CardContainer>
-            {
-                Item?.length <= 0 ? <h1 style={{color:"orangered", fontSize:"2rem"}}>CARGANDO...</h1> : <ItemList Products={Item}/>
-            }
-        </CardContainer>
+            promiseProductCategory(id)
+            .then((prodItem) => {
+                setProducts(prodItem);
+                setLoading(false);
+                setTitle("Bienvenido a Brixxi")
+            }) 
+            .catch(()=> console.log ("error con producto"))
+
+        }, [id]);
+    return (
+        <ItemList titulo={loading ? <div style={{color:"orangered", fontSize:"2rem"}}>CARGANDO...</div>: title}>
+            {products.map((producto) => (
+                <Item key={producto.id}{...producto} />
+            ))}
+        </ItemList>
     );
-}
-
-
-
-
-export default ItemListContainer
-
+};
 
 
 

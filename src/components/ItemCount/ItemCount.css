@@ -3,20 +3,19 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 9rem;
+
 }
 .stock-count{
     margin: 0.5rem;
     font-size: 1.5rem;
     text-align: center;
-    color: orangered;
 }
 .count-container{
     margin: 1rem;
     font-size: 2rem;
     text-transform: uppercase;
     font-family: Roboto,sans-serif;
-    color: orangered;
+    color: var(--textColor);
     background-color: var(--maincolor);
     padding: 1rem;
     width: 20rem;
@@ -84,14 +83,12 @@
     color: #cccccc;
     cursor: default;
 }
-
 .button{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 10rem;
+    width: 20rem;
     height: 3rem;
-    color:#f00759c0 ;
     font-size: 1.5rem;
     font-weight: 600;
     font-family: 'Bebas Neue', cursive;
@@ -102,8 +99,8 @@
     user-select: none;
 }
 .button:hover{
-    background-color:#faaf89;
-    color:#ec4881;
+    background-color: var(--secondaryColor);
+    color: var(--textColor);
     cursor: pointer;    
 }
 

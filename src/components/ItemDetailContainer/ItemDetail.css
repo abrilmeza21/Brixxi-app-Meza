@@ -1,0 +1,135 @@
+.item-detail-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    margin: 5rem;
+    background-color: #FF9158;
+    width: 50rem;
+    height: auto;
+    border-radius: 2rem;
+    border: 0.01rem solid #eeeeee;
+}
+.detail-image-description{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 40rem;
+    margin-left: 5px;
+}
+.image-container{
+    max-width: 100em;
+    height: 100%;
+}
+.detail-image{
+    width: 100%;
+    border-radius: 0.5rem;
+    height: 100%;
+}
+.detail-description{
+    font-size: 1.8rem;
+    font-weight: 100;
+    font-family:'Bebas Neue', cursive;
+    text-align: justify;
+    width: 20rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    color:#F00758;
+    line-height: 2.2rem;
+}
+p{
+    display: flex;
+    padding-top: 5px;
+}
+.description{
+    display: flex;
+
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+.resume{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 35rem;
+    height: 100%;
+    gap:5px;
+    font-family: 'Bebas Neue', cursive;
+    color: #F00758;
+}
+.information{
+    justify-content: center;
+    align-items: center;
+}
+.detail-name{
+    display: flex;
+    justify-content: center;
+    color: pink;
+    text-shadow: 2px 2px 2px #F00758 ;
+    margin-bottom: 2rem;
+    font-size: 4rem;
+}
+.detail-price{
+    display: flex;
+    justify-content: center;
+    color: #F00758;
+    margin-bottom: 1rem;
+    font-size: 3.5rem;
+}
+
+
+@media only screen and (max-width: 820px){
+
+    .item-detail-section{                                                                                 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 3rem;
+        margin: 2rem;
+        width: 90%;
+        height: 100%;
+        border-radius: 2rem;
+        border: 0.01rem solid #eeeeee;
+    }
+    .detail-image-description{
+        width: 20rem;
+        flex-direction:row;
+        flex-direction:none;
+    }
+    .image-container{
+        width: 300px;
+        padding-right: 0;
+    }
+    .detail-description{
+        font-size: 1.5rem;
+        text-align:start;
+        width: 100%;
+        margin: 0;
+        padding: 5px;
+    }
+    .description{
+        display: flex;
+        padding:0 0 0rem 0rem;
+        margin:0 0 0 0;
+        font-size: 2.5rem;
+        font-weight: 900;
+    }
+    p{
+        display: flex;
+        padding:0 0 0 0;
+        margin:0 0 0 0;
+    }
+    .resume{
+        padding:  1rem;
+        width: 2rem;
+    }
+    .information{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        height:100%;
+    }
+}
+

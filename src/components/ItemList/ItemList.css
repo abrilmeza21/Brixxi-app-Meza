@@ -1,0 +1,26 @@
+
+.card-list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 2rem;
+}
+
+.card-list-name {
+    text-align: center;
+    font-size: 4rem;
+    margin: 2rem;
+    padding-bottom: 2rem;
+    font-family:  'Bebas Neue', cursive;
+    color:  #FF9158;
+    text-shadow: 3px 3px 3px #F00758 ;
+}
+
+.card-list-article{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}

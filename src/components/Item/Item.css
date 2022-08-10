@@ -1,0 +1,126 @@
+.card-product{
+    display: flex;
+    border-radius:10px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    position:relative;
+    margin: 2.3rem;
+    width: 20rem;
+    background-color: #FF9158;
+    text-decoration: none;
+    color:#F00758;
+    border: #F00758 2px solid;
+}
+
+
+.card-container-image{
+    display: flex;
+    align-items: center;
+    background-color:  #FF9158;
+    width: 19em;
+    height: 23rem;
+    overflow: hidden;
+    border-radius:10px;
+}
+.card-product-image{
+    width: 100%;
+    padding: 5px;
+    border-radius:15px;
+}
+
+.card-product-detail-container{
+    display: flex;
+    height: 10em;
+    font-family: 'Bebas Neue', cursive;
+    justify-content: center;
+    flex-direction: column;
+    background-color:  #FF9158;
+    gap: 0.2rem;
+}
+
+.card-product-detail-container-name{
+    text-align: left;
+    font-size: 3rem;
+    font-weight: 200;
+    font-family:  'Bebas Neue', cursive;
+    padding: 0 2rem 0 2rem;
+    width: 100%;
+    color: pink;
+    text-shadow: 2px 2px 2px #F00758 ;
+    justify-content: center
+}
+
+.card-product-detail-container-detail{
+    padding: 0 2rem 0 2rem;
+    text-align: left;
+    font-size: 2rem;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    color: #F00758 ;
+}
+
+.card-product-detail-container-price{
+    padding: 0 2rem 0 2rem;
+    text-align: left;
+    font-size: 1.5rem;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    color: #F00758 ;
+}
+
+
+@media only screen and (max-width: 820px){
+    .card-product{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position:relative;
+    width: 100%;
+    box-shadow: 0.30rem -0.30rem 0.30rem #00000020;
+    margin: 5px;
+    }
+
+    .card-product:hover::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: ' ';
+    background: #f87a3b;
+    filter: blur(10rem);
+    z-index: -0;
+    flex-direction: row;
+    }
+
+    .card-container-image{
+    width: 15.5rem;
+    height: 15rem;
+    overflow: hidden;
+}
+
+    .card-product-image{
+    width: 100%;
+
+    }
+
+    .card-product-detail-container-name{
+    text-align: left;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 0 2rem 0 2rem;
+    }
+
+    .card-product-detail-container-price{
+    padding: 0 2rem 0 2rem;
+    text-align: left;
+    font-size: 3rem;
+    }
+    /* sumar responsive */
+}
