@@ -7,7 +7,7 @@
     flex-direction: column;
     position:relative;
     margin: 2.3rem;
-    width: 20rem;
+    width: 25rem;
     background-color: #FF9158;
     text-decoration: none;
     color:#F00758;
@@ -19,33 +19,32 @@
     display: flex;
     align-items: center;
     background-color:  #FF9158;
-    width: 19em;
+    width: 20em;
     height: 23rem;
     overflow: hidden;
-    border-radius:10px;
+    border-radius:10px ;
 }
 .card-product-image{
     width: 100%;
-    padding: 5px;
     border-radius:15px;
 }
 
 .card-product-detail-container{
     display: flex;
-    height: 10em;
+    height: 12em;
+    width: 20em;
     font-family: 'Bebas Neue', cursive;
-    justify-content: center;
+    justify-content:flex-start;
     flex-direction: column;
     background-color:  #FF9158;
     gap: 0.2rem;
 }
 
 .card-product-detail-container-name{
-    text-align: left;
-    font-size: 3rem;
+    text-align: center;
+    font-size: 35px;
     font-weight: 200;
     font-family:  'Bebas Neue', cursive;
-    padding: 0 2rem 0 2rem;
     width: 100%;
     color: pink;
     text-shadow: 2px 2px 2px #F00758 ;
@@ -53,9 +52,8 @@
 }
 
 .card-product-detail-container-detail{
-    padding: 0 2rem 0 2rem;
-    text-align: left;
-    font-size: 2rem;
+    text-align:center;
+    font-size: 30px;
     display: flex;
     width: 100%;
     justify-content: center;

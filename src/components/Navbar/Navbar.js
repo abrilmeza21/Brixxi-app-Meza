@@ -19,7 +19,6 @@ import {
 } from "react-icons/fa";
 import CartIcon from "../CartWidget/CartWidget";
 import { NavLink } from 'react-router-dom';
-
 const NavBar = () => {
     const [showMobileMenu, setShowMobileMenu] = useState(false);
     return (
@@ -88,3 +87,4 @@ const NavBar = () => {
     );
 };
 export default NavBar;
+	

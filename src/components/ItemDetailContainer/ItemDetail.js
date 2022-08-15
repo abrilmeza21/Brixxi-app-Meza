@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import  {ItemCount} from "../ItemCount/ItemCount"
 import './ItemDetail.css'
-
+import { useNavigate } from 'react-router-dom'
 
 
 export const ItemDetail = ({ item }) => {
@@ -10,7 +10,7 @@ export const ItemDetail = ({ item }) => {
     const onAdd = () => {
         setBought(true)
     }
-
+    const navigate = useNavigate();
 
     return (
         <section className="item-detail-section">
@@ -29,7 +29,7 @@ export const ItemDetail = ({ item }) => {
                     <div className= "detail-price">{`$ ${item.price}`}</div>
                 </div>
             { bought ?
-                <button className='btn-terminar-compra' >
+                <button className='btn-terminar-compra' onClick={() => navigate('/cart')} >
                     Terminar mi compra </button>
                     :
                     <ItemCount stock={item.stock} onAdd={onAdd} initial='1' />
