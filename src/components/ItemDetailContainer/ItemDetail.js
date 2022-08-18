@@ -1,16 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import  {ItemCount} from "../ItemCount/ItemCount"
-import './ItemDetail.css'
+import "./ItemDetail.css"
 import { useNavigate } from 'react-router-dom'
+import { CartContext } from "../CartWidget/CartContext"
 
-
-export const ItemDetail = ({ item }) => {
+export const ItemDetail = ({ item, loading }) => {
     const [bought, setBought] = useState(false);
+    const { addItem, itemSize } = useContext(CartContext);
+    const [stock, setStock] = useState(0)
 
-    const onAdd = () => {
+
+    const onAdd = (counter) => {
         setBought(true)
+        addItem(item, counter);
+        setStock((prevStock) => prevStock - counter);
     }
     const navigate = useNavigate();
+    useEffect(() => {
+        if (!loading) {
+            setStock(item.stock - itemSize(item.id));
+        }
+    }, [stock, loading]);
 
     return (
         <section className="item-detail-section">
@@ -23,7 +33,7 @@ export const ItemDetail = ({ item }) => {
                     <p>{item.detail}</p>
                 </div>
             </div>
-            <div className="resume">
+            <div className="resume">  
                 <div className="information">
                     <div className="detail-name">{item.name}</div>
                     <div className= "detail-price">{`$ ${item.price}`}</div>
@@ -31,8 +41,10 @@ export const ItemDetail = ({ item }) => {
             { bought ?
                 <button className='btn-terminar-compra' onClick={() => navigate('/cart')} >
                     Terminar mi compra </button>
+                    : stock === 0 ?
+                    <p className='item-detail-producto-agotado'>Producto agotado</p>
                     :
-                    <ItemCount stock={item.stock} onAdd={onAdd} initial='1' />
+                    <ItemCount stock={stock} onAdd={onAdd} initial='1' />
                 }
             </div>
         </section>

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {FaCartPlus} from "react-icons/fa";
-
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -14,17 +14,13 @@ export const CartIconElement = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    
     svg {
         fill: #f37e34;
     }
-
     h3{
         display: none;
         font-size: 1.8rem;
     }
-
-
 @media screen and (max-width: 1024px) {
     width: 30%;
     justify-content: left;
@@ -36,8 +32,6 @@ export const CartIconElement = styled.div`
         display: flex;
         }
     }
-
-
 @media screen and (max-width: 880px) {
         h3{
             display: flex;
@@ -47,9 +41,7 @@ export const CartIconElement = styled.div`
         display: flex;
         }
     }
-
 @media screen and (max-width: 500px) {
-
         h3{
             font-size: 2rem;
         }
@@ -58,7 +50,6 @@ export const CartIconElement = styled.div`
             display: flex;
         }
     }
-
 @media screen and (max-width: 260px) {
         h3{
             font-size: 1.5rem;
@@ -67,13 +58,13 @@ export const CartIconElement = styled.div`
         display: flex;
         }
     }
-
 `;
 
 const CartIcon = () => {
+    const navigate = useNavigate();
     return(
         
-        <CartIconElement>
+        <CartIconElement  onClick={() => navigate('/cart')}>
             <FaCartPlus/>
             <h3>MI CARRITO</h3>
         </CartIconElement>

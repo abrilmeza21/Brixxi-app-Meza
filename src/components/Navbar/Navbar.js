@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import {
     Container,
     LogoContainer,
@@ -17,10 +18,16 @@ import {
     FaPercent,
     FaSms,
 } from "react-icons/fa";
+
 import CartIcon from "../CartWidget/CartWidget";
 import { NavLink } from 'react-router-dom';
+
+
+
 const NavBar = () => {
     const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+
     return (
         <Container>
             <Wrapper>
@@ -32,6 +39,7 @@ const NavBar = () => {
                         <p>Shop</p>
                     </LogoContainer>
                 </NavLink>
+
                     <MobileIcon onClick={() => setShowMobileMenu(!showMobileMenu)}>
                         {showMobileMenu ? <FaTimes /> : <FaBars />}
                     </MobileIcon>
@@ -86,5 +94,5 @@ const NavBar = () => {
         </Container>
     );
 };
+
 export default NavBar;
-	

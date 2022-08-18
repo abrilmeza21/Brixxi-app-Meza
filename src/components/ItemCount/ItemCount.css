@@ -1,24 +1,21 @@
-.count-component-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
 
+.stock{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
 }
 .stock-count{
     margin: 0.5rem;
     font-size: 1.5rem;
     text-align: center;
 }
-.count-container{
-    margin: 1rem;
-    font-size: 2rem;
+.item-count-container{
     text-transform: uppercase;
     font-family: Roboto,sans-serif;
     color: var(--textColor);
-    background-color: var(--maincolor);
     padding: 1rem;
     width: 20rem;
+    height: 8rem;
 }
 .subs-add-stock{
     display: flex;
@@ -47,6 +44,7 @@
 
 .right{
     right:0;
+    font-size: 1.8rem
 
 }
 .right:hover{
@@ -54,35 +52,33 @@
     cursor: pointer;  
 }
 .left{
+    display: flex;
+    justify-content: center;
     left: 0;
+    font-size: 1.8rem
 }
 .left:hover{
-    color: var(--secondaryColor);
+    color: yellow;
     cursor: pointer;  
 }
 
-.subs-add-stock-number{
+.inc-dec-stock-sign{
     display: flex;
-    align-items: center;
     justify-content: center;
-    border: 0.01rem solid white;
-    margin: 0.5rem;
-    background-color: white;
-    color:var(--maincolor);
-    font-size: 1.5rem;
-    user-select: none;
-
+    align-items: center;
 }
 .disable-sign-left{
     left: 0;
-    color: #cccccc;
     cursor: default;
+    font-size: 1.8rem;
+
+
 }
 .disable-sign-right{
     right:  0;
-    color: #cccccc;
     cursor: default;
 }
+
 .button{
     display: flex;
     align-items: center;
@@ -108,8 +104,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 15rem;
-    height: 3rem;
+    width: 13rem;
+    height: 4rem;
     font-size: 1.5rem;
     font-weight: 600;
     font-family: 'Bebas Neue', cursive;
@@ -119,4 +115,19 @@
     background-color: #eee;
     box-shadow: 2px 2px 2px #ec4881;
     user-select: none;
+}
+.inc-dec-stock-n{
+font-size: 1.8rem;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.inc-dec-disponible{
+    display: flex;
+    justify-content: space-around;
+    margin: 5px;
+    margin-bottom: 20px;
+    height: 3rem;
+    background-color: pink;
 }
