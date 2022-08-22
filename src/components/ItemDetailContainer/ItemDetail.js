@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import  {ItemCount} from "../ItemCount/ItemCount"
 import "./ItemDetail.css"
 import { useNavigate } from 'react-router-dom'
-import { CartContext } from "../CartWidget/CartContext"
+import { CartContext } from "../Cart/CartContext"
 
 export const ItemDetail = ({ item, loading }) => {
     const [bought, setBought] = useState(false);

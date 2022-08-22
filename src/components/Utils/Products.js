@@ -74,10 +74,25 @@ const Products = [
 ]
 export default Products
 
+let categories = [
+    { id: "1", name: "Cremas" },
+    { id: "2", name: "Jabones" },
+    { id: "3", name: "Promociones" },
+]
 
 
-export const promiseProductId = (id) => {
-    const promise = new Promise((resolve, reject) => {
+export const getProducts = () => {
+    const promesa = new Promise((resolve, reject) => {
+        setTimeout(
+            () => {
+                resolve(Products);
+                reject("Error de conexion");
+            }, 3000)
+    });
+    return promesa;
+}
+export const getProductById = (id) => {
+    const promesa = new Promise((resolve, reject) => {
         setTimeout(
             () => {
                 const product = Products.find(producto => producto.id === id);
@@ -86,21 +101,42 @@ export const promiseProductId = (id) => {
                 } else {
                     reject("El producto no existe");
                 }
+
             }, 1000)
     });
-    return promise;
+    return promesa;
 }
-export const promiseProductCategory = (Categoria) => {
-    const promise = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (Categoria) {
-                resolve (Products.filter((producto) => producto.category === Categoria));
-                } else if (Categoria === undefined) {
-                    resolve(Products);
+export const getProductsByCategory = (category) => {
+    const promesa = new Promise((resolve, reject) => {
+        setTimeout(
+            () => {
+                const filteredProducts = Products.filter(producto => producto.category === category);
+                if (filteredProducts) {
+                    resolve(filteredProducts);
                 } else {
                     reject("La categoría no existe");
                 }
-            }, 1000);
+
+            }, 1000)
     });
-    return promise;
+    return promesa;
+}
+
+export const getCategoryById = (id) => {
+    const promesa = new Promise((resolve, reject) => {
+        setTimeout(
+            () => {
+
+                const filteredProducts = categories.find(category => category.id === id);
+
+
+                if (filteredProducts) {
+                    resolve(filteredProducts);
+                } else {
+                    reject("La categoría no existe");
+                }
+
+            }, 1000)
+    });
+    return promesa;
 }

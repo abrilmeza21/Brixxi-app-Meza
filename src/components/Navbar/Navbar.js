@@ -19,7 +19,7 @@ import {
     FaSms,
 } from "react-icons/fa";
 
-import CartIcon from "../CartWidget/CartWidget";
+import { CartWidjet } from "../Cart/cartWidget/CartWidget";
 import { NavLink } from 'react-router-dom';
 
 
@@ -84,7 +84,7 @@ const NavBar = () => {
                         <MenuItem>
                             <MenuItemLink as={NavLink} to = "/cart" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                                 <div className="Cart">
-                                <CartIcon/>
+                                <CartWidjet/>
                                 </div>
                             </MenuItemLink>
                         </MenuItem>

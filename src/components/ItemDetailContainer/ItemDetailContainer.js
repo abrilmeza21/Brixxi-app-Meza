@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
-import {promiseProductId } from "../Utils/Products";
+import {getProductById } from "../Utils/Products";
 import { ItemDetail } from "./ItemDetail";
 
 export const ItemDetailContainer = () => {
@@ -9,10 +9,10 @@ export const ItemDetailContainer = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        promiseProductId(id)
-            .then(prod => {
-                setProduct(prod)
-                setLoading(false)
+        getProductById(id)
+        .then(prod => {
+            setProduct(prod)
+            setLoading(false)
             })
             .catch (()=> console.log ("error con producto"))
     }, [id])

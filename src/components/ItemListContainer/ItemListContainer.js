@@ -2,27 +2,37 @@ import React, { useState, useEffect } from 'react';
 import './ItemListContainer.css';
 import { ItemList } from "../ItemList/ItemList"
 import { Item } from "../Item/Item";
-import { promiseProductCategory } from "../Utils/Products";
-import { useParams } from 'react-router-dom';
+import { getProductsByCategory, getProducts, getCategoryById } from "../Utils/Products";
+import {useParams} from 'react-router-dom';
 
 export const ItemListContainer = () => {
-
-
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const { id } = useParams();
     const [title, setTitle] = useState("Brixxi");
 
-    useEffect(() => {
-            promiseProductCategory(id)
-            .then((prodItem) => {
-                setProducts(prodItem);
-                setLoading(false);
-                setTitle("Bienvenido a Brixxi")
-            }) 
-            .catch(()=> console.log ("error con producto"))
 
-        }, [id]);
+    useEffect(() => {
+
+        if (id === "" || id === undefined) {
+            getProducts().then(prod => {
+                setProducts(prod);
+                setTitle("Bienvenidos a Brixxi");
+
+            }).catch(()=> console.log ("error con producto"))
+                .finally(() => { setLoading(false) })
+        } else {
+            getProductsByCategory(id).then(prod => setProducts(prod));
+
+            getCategoryById(id).then(category => {
+                setTitle(category.name)
+
+            }).catch(()=> console.log ("error con producto"))
+                .finally(() => { setLoading(false) })
+        }
+        return () => { setProducts([]) }
+        }, [ id]);
+
     return (
         <ItemList titulo={loading ? <div style={{color:"orangered", fontSize:"2rem"}}>CARGANDO...</div>: title}>
             {products.map((producto) => (

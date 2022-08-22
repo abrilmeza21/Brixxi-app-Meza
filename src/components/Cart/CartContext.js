@@ -6,7 +6,9 @@ export const CartContextProvider = ({ children }) => {
     //itemInCart es un arreglo de {Item, cantidad}
 
     const [itemsInCart, setItemsInCart] = useState([]);
-
+    
+     // addItem: agrega cierta cantidad de items al carro de compras
+    
     const addItem = (item, quantity) => {
         if (itemsInCart.length === 0) {
             setItemsInCart([{ item, quantity }]);
@@ -19,14 +21,12 @@ export const CartContextProvider = ({ children }) => {
                 setItemsInCart([...itemInCartCopy]);
             } else {
                 setItemsInCart([...itemsInCart, { item, quantity }]);
-
             }
         }
     }
-    /**
-     * 
-     * @returns devuelve el tamaño de la lista de productos
-     */
+    
+    //Devuelve el tamaño de la lista de productos
+    
     const cartSize = () => {
         return itemsInCart.length;
     }
@@ -38,6 +38,7 @@ export const CartContextProvider = ({ children }) => {
         return cant;
     }
 
+    //removeItem: elimina un item segun su id
     const removeItem = (itemId) => {
         if (isInCart(itemId)) {
             let itemInCartCopy = [...itemsInCart];
@@ -48,16 +49,20 @@ export const CartContextProvider = ({ children }) => {
             setItemsInCart(itemInCartCopy);
         }
     }
-    /**
-    * clear: elimina todos los elementos del carro de compras
-    */
+    
+    // clear: elimina todos los elementos del carro de compras
+    
     const clear = () => {
         setItemsInCart([]);
     }
+    
+    //isInCart: verifica si el item ya existe en el carrito segun id
 
     const isInCart = (id) => {
         return itemsInCart.some((itemCant) => itemCant.item.id === id)
     }
+    
+    //findAllItems devuelve todos los elementos de la lista de items
     
     const findAllItems = () => {
         return itemsInCart;
@@ -94,13 +99,9 @@ export const CartContextProvider = ({ children }) => {
         });
         return plus;
     }
-    const updateQuantity = (id) => {
-        //TODO actualiza la cantidad de un producto
-
-    }
     return (
         <CartContext.Provider value={{
-            /* funciones a compratir*/
+            
             addItem, removeItem, clear, findAllItems, cartSize, itemSize, totalPlus, totalPlusPrice, increment, decrement
         }}>
             {children}

@@ -1,11 +1,11 @@
-import React, { useContext} from 'react';
-import { CartContext } from "../CartWidget/CartContext";
-import { ItemCount } from '../ItemCount/ItemCount';
+import React, { useContext, useState, useEffect } from 'react';
+import { CartContext } from "../CartContext";
+import { Count } from '../Count/Count';
 import './ItemCart.css';
 
 export const ItemCart = ({ itemCant }) => {
     const { item, quantity } = itemCant;
-    const { removeItem, } = useContext(CartContext);
+    const { removeItem, clear, findAllItems, cartSize, totalPlus, increment, decrement } = useContext(CartContext);
 
     return (
         <section className="container">
@@ -18,7 +18,7 @@ export const ItemCart = ({ itemCant }) => {
             </div>
 
             <div className='item-cart-count'>
-                <ItemCount itemCant={itemCant} />
+                <Count itemCant={itemCant} />
             </div>
             <div className='item-cart-precio'>
                 ${item.price * quantity}

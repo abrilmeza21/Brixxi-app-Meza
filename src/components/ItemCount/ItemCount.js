@@ -1,14 +1,13 @@
-import React, { useEffect, useState} from 'react'
+import React, {  useEffect, useState, useContext } from 'react'
 import { FaMinus, FaPlus } from "react-icons/fa";
 import "./ItemCount.css";
 
-export const ItemCount = ({stock, initial, onAdd }) => {
+
+export const ItemCount =  ({ stock, initial, onAdd }) => {
 
     const [counter, setCounter] = useState(Number(initial));
     const [plusCounter, setPlusCounter] = useState(false);
     const [minusCounter, setMinusCounter] = useState(false);
-
-
 
     useEffect(() => {
 
@@ -36,10 +35,12 @@ export const ItemCount = ({stock, initial, onAdd }) => {
             setCounter(counter - 1);
         }
     }
+
+
     return (
             <div className="item-count-component" >
                 <div className="item-count-container">
-                    <div className="stock">{`Stock ${stock} unidades`}</div>
+                    <div className="stock">{`Disponibles: ${stock} unidades`}</div>
                     <div className="inc-dec-disponible">
                         <div className={`inc-dec-stock-sign ${minusCounter ? 'left' : "disable-sign-left"}`} onClick={decrement}><FaMinus /></div>
                         <div className="inc-dec-stock-n">{counter}</div>
@@ -47,8 +48,8 @@ export const ItemCount = ({stock, initial, onAdd }) => {
                     </div>
                 </div>
                 <div className='button' onClick={() => {
-                    onAdd(counter);
-                }}>Agregar a carrito</div>
+                onAdd(counter);
+            }}>Agregar a carrito</div>
             </div>
         )
     }
