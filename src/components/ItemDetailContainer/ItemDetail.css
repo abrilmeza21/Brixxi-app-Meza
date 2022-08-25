@@ -63,6 +63,7 @@ p{
 .detail-name{
     display: flex;
     justify-content: center;
+    text-align: center;
     color: pink;
     text-shadow: 2px 2px 2px #F00758 ;
     margin-bottom: 2rem;
@@ -73,7 +74,8 @@ p{
     justify-content: center;
     color: #F00758;
     margin-bottom: 1rem;
-    font-size: 3.5rem;
+    font-size: 3.8rem;
+
 }
 
 

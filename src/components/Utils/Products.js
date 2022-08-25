@@ -1,142 +1,73 @@
-const Products = [ 
-    {
-        id: "1",
-        category: "1",
-        name: "Hidratante de Frambuesa",
-        price: 80 ,
-        detail:"Hidratante Facial",
-        pictureUrl: "https://loremflickr.com/350/350",
-        stock: 5 ,
-    },
-    {
-        id: "2",
-        category: "3",
-        name: "Manteca Nutritiva de Coco",
-        price: 97 ,
-        detail :"Body Butter",
-        pictureUrl: "https://loremflickr.com/350/350",
-        stock: 35 ,
-    },
-    {
-        id: "3",
-        category: "2",
-        name: "Jabon de Coco y Lavanda",
-        price: 150 ,
-        detail :"Jabon para pieles sensibles",
-        pictureUrl: "https://loremflickr.com/350/350",
-        stock: 87 ,
-    },
-    {
-        id: "4",
-        category: "2",
-        name: "Jabon de Arcilla Negra",
-        price: 360 ,
-        detail :"Jabon para pieles grasas",
-        pictureUrl: "https://loremflickr.com/350/350",
-        stock: 65 ,
-    },
-    {
-        id: "5",
-        category: "1",
-        name: "Crema Nutritiva de Avena",
-        price: 80 ,
-        detail :"Crema Nutritiva Facial",
-        pictureUrl:"https://loremflickr.com/350/350",
-        stock: 5 ,
-    },
-    {
-        id: "6",
-        category: "2",
-        name: "Crema Para pieles con acne",
-        price: 97 ,
-        detail :"Crema facial con tea tree",
-        pictureUrl: "https://loremflickr.com/350/350",
-        stock: 35 ,
-    },
-    {
-        id: "7",
-        category: "1",
-        name: "Crema Antioxidante",
-        price: 150 ,
-        detail :"Crema facial con extracto de arandanos",
-        pictureUrl: "https://loremflickr.com/350/350",
-        stock: 87 ,
-    },
-    {
-        id: "8",
-        category: "3",
-        name: "Jabon de Avena",
-        price: 360 ,
-        detail :"jabon corporal para todo tipo de pieles",
-        pictureUrl: "https://loremflickr.com/350/350",
-        stock: 65 ,
-    }
-]
-export default Products
+import { firebaseApp } from '../Config/Conexion';
+import { doc, getDoc, getFirestore, collection, getDocs, query, where, addDoc } from 'firebase/firestore';
+const Products = "Products";
+const app = firebaseApp;
+const Category = "categories"
 
-let categories = [
-    { id: "1", name: "Cremas" },
-    { id: "2", name: "Jabones" },
-    { id: "3", name: "Promociones" },
-]
+export const saveProduct = (product) => {
+    const db = getFirestore(app);
 
-
+    addDoc(collection(db, Products), product)
+        .then(dato => console.log(dato))
+        .catch(err => console.log(err));
+}
 export const getProducts = () => {
+
+    const db = getFirestore(app);
+    const itemsCollection = collection(db, Products);
     const promesa = new Promise((resolve, reject) => {
-        setTimeout(
-            () => {
-                resolve(Products);
-                reject("Error de conexion");
-            }, 3000)
+        getDocs(itemsCollection)
+            .then((snapshot) => {
+                if (snapshot.size === 0) {
+                    resolve([]);
+                } else {
+                    resolve(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+                }
+            })
+            .catch(err => reject(err));
     });
     return promesa;
 }
 export const getProductById = (id) => {
+    const db = getFirestore(app);
+    const biciRef = doc(db, Products, id);
     const promesa = new Promise((resolve, reject) => {
-        setTimeout(
-            () => {
-                const product = Products.find(producto => producto.id === id);
-                if (product) {
-                    resolve(product);
-                } else {
-                    reject("El producto no existe");
-                }
 
-            }, 1000)
-    });
+        getDoc(biciRef).then((snapshop) => {
+            if (snapshop.exists()) {
+                resolve({ id: snapshop.id, ...snapshop.data() })
+            }
+        }).catch(err => reject(err));
+    })
     return promesa;
 }
+
 export const getProductsByCategory = (category) => {
+    const db = getFirestore(app);
+    const q = query(collection(db, Products), where("category", "==", category));
     const promesa = new Promise((resolve, reject) => {
-        setTimeout(
-            () => {
-                const filteredProducts = Products.filter(producto => producto.category === category);
-                if (filteredProducts) {
-                    resolve(filteredProducts);
-                } else {
-                    reject("La categoría no existe");
-                }
-
-            }, 1000)
-    });
+        getDocs(q).then((snapshot) => {
+            if (snapshot.size === 0) {
+                resolve([]);
+            } else {
+                resolve(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+            }
+        }).catch(err => reject(err));
+    })
     return promesa;
 }
-
 export const getCategoryById = (id) => {
-    const promesa = new Promise((resolve, reject) => {
-        setTimeout(
-            () => {
+    const db = getFirestore(app);
+    return new Promise((resolve, reject) => {
+        const biciRef = doc(db, Category, id);
 
-                const filteredProducts = categories.find(category => category.id === id);
+        getDoc(biciRef).then((snapshop) => {
+            if (snapshop.exists()) {
+                resolve({ id: snapshop.id, ...snapshop.data() })
+            } else {
+                reject({ message: 'La categoría no existe' })
+            }
+        }).catch(err => reject({ message: err }));
 
-
-                if (filteredProducts) {
-                    resolve(filteredProducts);
-                } else {
-                    reject("La categoría no existe");
-                }
-
-            }, 1000)
     });
-    return promesa;
 }

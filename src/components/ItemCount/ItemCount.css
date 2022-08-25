@@ -2,7 +2,7 @@
 .stock{
     display: flex;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 .stock-count{
     margin: 0.5rem;
@@ -13,9 +13,8 @@
     text-transform: uppercase;
     font-family: Roboto,sans-serif;
     color: var(--textColor);
-    padding: 1rem;
     width: 20rem;
-    height: 8rem;
+
 }
 .subs-add-stock{
     display: flex;
@@ -95,7 +94,7 @@
     user-select: none;
 }
 .button:hover{
-    background-color: var(--secondaryColor);
+    background-color: pink;
     color: var(--textColor);
     cursor: pointer;    
 }
@@ -116,6 +115,12 @@
     box-shadow: 2px 2px 2px #ec4881;
     user-select: none;
 }
+.btn-terminar-compra:hover{
+    background-color: pink;
+    color: var(--textColor);
+    cursor: pointer;    
+}
+
 .inc-dec-stock-n{
 font-size: 1.8rem;
 display: flex;

@@ -10,7 +10,7 @@
 }
 
 .cart-widjet-btn:hover{
-    color: var(--secondaryColor);
+    color: peachpuff;
 }
 
 .cart-widjet-count{
@@ -21,5 +21,5 @@
     font-size: 1.2rem;
 }
 .button{
-    color: #29335C;
+    color: #F00758;
 }
