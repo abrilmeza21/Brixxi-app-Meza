@@ -1,6 +1,3 @@
-import {
-    getCategoryById as getCategoryByIdModel
-} from '../Utils/Products';
 
 import {
     getProducts as getProductsModel,
@@ -20,6 +17,6 @@ export const getProductsByCategory = (category) => {
     return getProductsByCategoryModel(category);
 }
 
-export const getCategoryById = (id) => {
-    return getCategoryByIdModel(id);
-}
+
+
+

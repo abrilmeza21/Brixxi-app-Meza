@@ -2,7 +2,8 @@ import { firebaseApp } from '../Config/Conexion';
 import { doc, getDoc, getFirestore, collection, getDocs, query, where, addDoc } from 'firebase/firestore';
 const Products = "Products";
 const app = firebaseApp;
-const Category = "categories"
+
+
 
 export const saveProduct = (product) => {
     const db = getFirestore(app);
@@ -55,19 +56,4 @@ export const getProductsByCategory = (category) => {
         }).catch(err => reject(err));
     })
     return promesa;
-}
-export const getCategoryById = (id) => {
-    const db = getFirestore(app);
-    return new Promise((resolve, reject) => {
-        const biciRef = doc(db, Category, id);
-
-        getDoc(biciRef).then((snapshop) => {
-            if (snapshop.exists()) {
-                resolve({ id: snapshop.id, ...snapshop.data() })
-            } else {
-                reject({ message: 'La categoría no existe' })
-            }
-        }).catch(err => reject({ message: err }));
-
-    });
 }

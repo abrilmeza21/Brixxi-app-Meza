@@ -3,13 +3,14 @@ import React, { createContext, useState } from 'react'
 export const CartContext = createContext();
 
 export const CartContextProvider = ({ children }) => {
+
     //itemInCart es un arreglo de {Item, cantidad}
 
     const [itemsInCart, setItemsInCart] = useState([]);
     
      // addItem: agrega cierta cantidad de items al carro de compras
     
-    const addItem = (item, quantity) => {
+        const addItem = (item, quantity) => {
         if (itemsInCart.length === 0) {
             setItemsInCart([{ item, quantity }]);
         } else {
@@ -18,7 +19,13 @@ export const CartContextProvider = ({ children }) => {
                 const itemInCartCopy = [...itemsInCart];
                 const itemCart = itemInCartCopy.find((itemCart) => item.id === itemCart.item.id);
                 itemCart.quantity += quantity;
-                setItemsInCart([...itemInCartCopy]);
+                setItemsInCart([...itemInCartCopy], {
+                    id: item.id,
+                    img: item.pictureUrl,
+                    name: item.name,
+                    cost: item.price,
+                    
+                });
             } else {
                 setItemsInCart([...itemsInCart, { item, quantity }]);
             }
@@ -36,6 +43,10 @@ export const CartContextProvider = ({ children }) => {
             cant = itemsInCart.find(itemCart => itemCart.item.id === id).quantity;
         }
         return cant;
+    }
+
+    const removeList = () => {
+        setItemsInCart([]);
     }
 
     //removeItem: elimina un item segun su id
@@ -102,7 +113,7 @@ export const CartContextProvider = ({ children }) => {
     return (
         <CartContext.Provider value={{
             
-            addItem, removeItem, clear, findAllItems, cartSize, itemSize, totalPlus, totalPlusPrice, increment, decrement
+            itemsInCart, removeList, addItem, removeItem, clear, findAllItems, cartSize, itemSize, totalPlus, totalPlusPrice, increment, decrement
         }}>
             {children}
         </CartContext.Provider>

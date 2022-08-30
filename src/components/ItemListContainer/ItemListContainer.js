@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './ItemListContainer.css';
 import { ItemList } from "../ItemList/ItemList"
 import { Item } from "../Item/Item";
-import {getCategoryById, getProductsByCategory, getProducts } from "../Services/services"
+import { getProductsByCategory, getProducts } from "../Services/services"
 import {useParams} from 'react-router-dom';
 
 export const ItemListContainer = () => {
@@ -22,11 +22,8 @@ export const ItemListContainer = () => {
             }).catch(()=> console.log ("error con producto"))
                 .finally(() => { setLoading(false) })
         } else {
-            getProductsByCategory(id).then(prod => setProducts(prod));
-
-            getCategoryById(id).then(category => {
-                setTitle(category.name)
-
+            getProductsByCategory(id).then(prod => { 
+                setProducts(prod);
             }).catch(()=> console.log ("error con producto"))
                 .finally(() => { setLoading(false) })
         }
@@ -41,8 +38,3 @@ export const ItemListContainer = () => {
         </ItemList>
     );
 };
-
-
-
-
-

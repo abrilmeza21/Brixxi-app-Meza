@@ -55,7 +55,7 @@ const NavBar = () => {
                         </MenuItem>
 
                         <MenuItem>
-                            <MenuItemLink as={NavLink} to = "/category/1" onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                            <MenuItemLink as={NavLink} to = "/category/NuIOJuhyDmwntKCJfkAP" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                                 <div>
                                     <FaRainbow />
                                     <h3>CREMAS</h3>
@@ -64,7 +64,7 @@ const NavBar = () => {
                         </MenuItem>
 
                         <MenuItem>
-                            <MenuItemLink as={NavLink} to = "/category/2" onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                            <MenuItemLink as={NavLink} to = "/category/D9Cwa2iV0HUb8YrGRTNL" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                                 <div>
                                     <FaPercent />
                                     <h3>JABONES</h3>
@@ -73,7 +73,7 @@ const NavBar = () => {
                         </MenuItem>
 
                         <MenuItem>
-                            <MenuItemLink as={NavLink} to = "/category/3" onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                            <MenuItemLink as={NavLink} to = "/category/i2VEZ7F9P7SUeTZop7cs" onClick={() => setShowMobileMenu(!showMobileMenu)}>
                                 <div>
                                     <FaSms />
                                     <h3>PROMOCIONES</h3>
