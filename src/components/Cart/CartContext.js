@@ -1,10 +1,10 @@
 import React, { createContext, useState } from 'react'
 
+
+
 export const CartContext = createContext();
 
 export const CartContextProvider = ({ children }) => {
-
-    //itemInCart es un arreglo de {Item, cantidad}
 
     const [itemsInCart, setItemsInCart] = useState([]);
     
@@ -110,6 +110,8 @@ export const CartContextProvider = ({ children }) => {
         });
         return plus;
     }
+
+
     return (
         <CartContext.Provider value={{
             
