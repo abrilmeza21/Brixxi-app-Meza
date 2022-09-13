@@ -1,13 +1,13 @@
 import './ItemCart.css';
 
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 
 import { CartContext } from "../CartContext";
 import { Count } from '../Count/Count';
 
 export const ItemCart = ({ itemCant }) => {
     const { item, quantity } = itemCant;
-    const { removeItem, clear, findAllItems, cartSize, totalPlus, increment, decrement } = useContext(CartContext);
+    const { removeItem} = useContext(CartContext);
 
     return (
         <section className="container">

@@ -45,11 +45,16 @@ export const CartContextProvider = ({ children }) => {
 
 
     //removeItem: elimina un item segun su id
-    const removeItem  = (id) => {
-        let result = itemsInCart.filter(item => item.idItem !== id);
-        setItemsInCart(result);
+    const removeItem = (itemId) => {
+        if (isInCart(itemId)) {
+            let itemInCartCopy = [...itemsInCart];
+            let itemCart = itemInCartCopy.find((itemCart) => (
+                itemCart.item.id === itemId
+            ))
+            itemInCartCopy.splice(itemInCartCopy.indexOf(itemCart), 1);
+            setItemsInCart(itemInCartCopy);
+        }
     }
-    
     // clear: elimina todos los elementos del carro de compras
     
     const clear = () => {
