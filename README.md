@@ -74,7 +74,7 @@ __Main con todas las categorías en versión desktop y luego en versión para mo
 * [sweetalert2](https://sweetalert2.github.io/) brindando feedback al usuario con carteles elegantes y sencillos de utilizar
 
 
-### Muestra en github page
-*    [universo3d](https://6320b69246eae81c94cdb3a1--charming-cheesecake-36d9a9.netlify.app/)
+### Muestra en netlify page
+*    [BrixxiShop](https://6320b69246eae81c94cdb3a1--charming-cheesecake-36d9a9.netlify.app/)
 
 
