@@ -1,7 +1,9 @@
-import React, { useContext, useState, useEffect } from 'react';
+import './ItemCart.css';
+
+import React, { useContext, useEffect, useState } from 'react';
+
 import { CartContext } from "../CartContext";
 import { Count } from '../Count/Count';
-import './ItemCart.css';
 
 export const ItemCart = ({ itemCant }) => {
     const { item, quantity } = itemCant;

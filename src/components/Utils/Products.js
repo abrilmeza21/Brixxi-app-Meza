@@ -1,12 +1,14 @@
-import { firebaseApp } from '../Config/Conexion';
-import { doc, getDoc, getFirestore, collection, getDocs, query, where, addDoc } from 'firebase/firestore';
+import { addDoc, collection, doc, getDoc, getDocs, query, where } from 'firebase/firestore';
+
+import db from '../Config/Conexion';
+
 const Products = "Products";
-const app = firebaseApp;
+
 
 
 
 export const saveProduct = (product) => {
-    const db = getFirestore(app);
+
 
     addDoc(collection(db, Products), product)
         .then(dato => console.log(dato))
@@ -14,7 +16,7 @@ export const saveProduct = (product) => {
 }
 export const getProducts = () => {
 
-    const db = getFirestore(app);
+
     const itemsCollection = collection(db, Products);
     const promesa = new Promise((resolve, reject) => {
         getDocs(itemsCollection)
@@ -30,7 +32,7 @@ export const getProducts = () => {
     return promesa;
 }
 export const getProductById = (id) => {
-    const db = getFirestore(app);
+
     const biciRef = doc(db, Products, id);
     const promesa = new Promise((resolve, reject) => {
 
@@ -44,7 +46,7 @@ export const getProductById = (id) => {
 }
 
 export const getProductsByCategory = (category) => {
-    const db = getFirestore(app);
+
     const q = query(collection(db, Products), where("category", "==", category));
     const promesa = new Promise((resolve, reject) => {
         getDocs(q).then((snapshot) => {
@@ -57,3 +59,4 @@ export const getProductsByCategory = (category) => {
     })
     return promesa;
 }
+

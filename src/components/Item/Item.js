@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from 'react-router-dom';
 import './Item.css';
 
+import { Link } from 'react-router-dom';
+import React from "react";
 
 export const Item = ({ id, pictureUrl, name, detail}) => {
 
@@ -13,7 +13,7 @@ export const Item = ({ id, pictureUrl, name, detail}) => {
             </div>
             <div className='card-product-detail-container'>
                 <p className="card-product-detail-container-name">{name}</p>
-                <p className="card-product-detail-container-detail">{detail}</p>
+                <p className="card-product-detail-container-detail">{detail}</p>  
             </div>           
         </Link>
 

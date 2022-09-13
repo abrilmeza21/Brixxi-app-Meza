@@ -1,8 +1,7 @@
-
 import {
-    getProducts as getProductsModel,
     getProductById as getProductByIdModel,
     getProductsByCategory as getProductsByCategoryModel,
+    getProducts as getProductsModel,
 } from '../Utils/Products';
 
 export const getProducts = () => {
@@ -16,7 +15,4 @@ export const getProductById = (id) => {
 export const getProductsByCategory = (category) => {
     return getProductsByCategoryModel(category);
 }
-
-
-
 
