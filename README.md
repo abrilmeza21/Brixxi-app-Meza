@@ -45,16 +45,16 @@ Tiene dos estados, uno para páginas desktop y otro para pantallas mobile.
 
 __Barra Desktop__
 
-![Barra desktop](./src/images/Navbar.png)
+![Barra desktop](./src/imagenes/Navbar.png)
 
 
 Un __Main__,  donde se encuentra la información llamada por la barra de navegación, tales como productos y detalles de los mismos.
 
 __Main con todas las categorías en versión desktop y luego en versión para mobile__
 
-![Main](./src/images/general.png)
+![Main](./src/imagenes/general.png)
 
-![Main](./src/images/movilecategorias.png)
+![Main](./src/imagenes/movilecategorias.png)
 
 
 ## Librerías usadas
