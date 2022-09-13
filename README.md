@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Brixxi Shop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Brixxi Shop es un proyecto de tipo e-commerce, creado en ReactJs, con una conexión a Firebase como backend y pensado para escalarlo con vinculación a otras tecnologías.
 
-## Available Scripts
+## Estado del proyecto
 
-In the project directory, you can run:
+El mismo se encuentra en etapa de crecimiento, la intención es agregar todos los servicios de Firebase, medios de pago y auto gestión.
 
-### `npm start`
+### Instalación
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Debe tener instalado node v16.15 y npm v8.5.5 o superior
+Puede clonar el proyecto con git utilizando el comando:
+```git 
+  git clone https://https://github.com/abrilmeza21/Brixxi-app-Meza.git
+ ```
+y luego ejecutar el comando 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```git 
+  npm install
+ ```
+## Soporte
+De encontrar algún problema o bug, se agradece si se puede notificar a abrilmmp20@gmail.com.
 
-### `npm test`
+## Hoja de ruta
+Se espera que a futuro, el proyecto incorpore mas funcionalidades mediante el desarrollo back-end.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Contribución
+Este proyecto utiliza varias librerías que facilitan su desarrollo por lo que agradezco a los proyectos:
+* [react-icons](https://react-icons.github.io/react-icons) agregando muchos íconos
+* [sweetalert2](https://sweetalert2.github.io/) brindando feedback al usuario con carteles elegantes y sencillos de uti
 
-### `npm run build`
+## Visuales
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+__Producto__
 
-### `npm run eject`
+![Producto](./src/imagenes/item.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+El usuario podrá filtrar el conjuto de productos mediante categorías, una vez visto el producto que se desea, el usuario podrá hacer click en el mismo para ser dirigido a una nueva pantalla, donde se encuentra la descripción del producto y un itemCounter que le permitirá seleccionar la cantidad y llevarlo a un carrito de compras.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Descripción del diseño
+Cuenta con un __Header__ en el que se incluye una barra de navegación, la misma esta constituida por una marca , categorías, un ícono de un carrito de compras y botones para registrarse o ingresar.
+Tiene dos estados, uno para páginas desktop y otro para pantallas mobile. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+__Barra Desktop__
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![Barra desktop](./src/images/Navbar.png)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Un __Main__,  donde se encuentra la información llamada por la barra de navegación, tales como productos y detalles de los mismos.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+__Main con todas las categorías en versión desktop y luego en versión para mobile__
 
-### Code Splitting
+![Main](./src/images/general.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![Main](./src/images/movilecategorias.png)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Librerías usadas
+### Predeterminadas de Create React Aplication
+*    react ^18.1.0
+*    react-dom 18.1.0
+*    react-scripts ^5.0.1
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Librerías de navegación
+*    [react-router-dom ^6.3.0](https://reactrouter.com/)
 
-### Advanced Configuration
+### Otras librerías
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* [react-icons](https://react-icons.github.io/react-icons) agregando muchos íconos
+* [material ui](https://mui.com/) agregando estética y diseño a los componentes
+* [sweetalert2](https://sweetalert2.github.io/) brindando feedback al usuario con carteles elegantes y sencillos de utilizar
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Muestra en github page
+*    [universo3d](https://6320b69246eae81c94cdb3a1--charming-cheesecake-36d9a9.netlify.app/)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
