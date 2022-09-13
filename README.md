@@ -54,7 +54,7 @@ __Main con todas las categorías en versión desktop y luego en versión para mo
 
 ![Main](./src/imagenes/general.png)
 
-![Main](./src/imagenes/movilecategorias.png)
+![Main](./src/imagenes/mobilecategorias.png)
 
 
 ## Librerías usadas
