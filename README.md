@@ -75,6 +75,6 @@ __Main con todas las categorías en versión desktop y luego en versión para mo
 
 
 ### Muestra en netlify page
-*    [BrixxiShop](https://6320b69246eae81c94cdb3a1--charming-cheesecake-36d9a9.netlify.app/)
+*    [BrixxiShop](https://6320d88946eae84027cdb5b7--glittery-biscochitos-a81a28.netlify.app/)
 
 
